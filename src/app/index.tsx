@@ -1,15 +1,23 @@
-import { View } from 'react-native'
+import { FlatList, View } from 'react-native'
 
 import { Header } from '@/components/header'
 import { CategoryButton } from '@/components/category-button'
+
+import { CATEGORIES } from '@/utils/data/products'
 
 export default function Home() {
   return (
     <View className="flex-1 pt-8">
       <Header title="Make your wish" cartQuantityItems={1} />
-      <View className="flex-row gap-4">
-        <CategoryButton title="Snack of the day" isSelected />
-      </View>
+      <FlatList
+        data={CATEGORIES}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => <CategoryButton title={item} />}
+        horizontal
+        className="max-h-10 mt-5"
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ gap: 12, paddingHorizontal: 20 }}
+      />
     </View>
   )
 }
