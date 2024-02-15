@@ -1,5 +1,5 @@
 import { Image, Text, View } from 'react-native'
-import { useLocalSearchParams } from 'expo-router'
+import { useLocalSearchParams, useNavigation } from 'expo-router'
 import { Feather } from '@expo/vector-icons'
 
 import { useCartStore } from '@/stores/cart-store'
@@ -13,12 +13,16 @@ import { formatCurrency } from '@/utils/functions/format-currency'
 export default function Product() {
   const { id } = useLocalSearchParams()
 
+  const navigation = useNavigation()
+
   const cartStore = useCartStore()
 
   const product = PRODUCTS.filter((product) => product.id === id)[0]
 
   function handleAddToCart() {
     cartStore.add(product)
+
+    navigation.goBack()
   }
 
   return (
