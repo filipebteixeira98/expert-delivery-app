@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import { ScrollView, Text, View, Alert, Linking } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { useNavigation } from 'expo-router'
 import { Feather } from '@expo/vector-icons'
+import { useNavigation } from 'expo-router'
+import { useState } from 'react'
+import { Alert, Linking, ScrollView, Text, View } from 'react-native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
-import { ProductCartProps, useCartStore } from '@/stores/cart-store'
-
-import { Header } from '@/components/header'
-import { Product } from '@/components/product'
-import { Input } from '@/components/input'
 import { Button } from '@/components/button'
+import { Header } from '@/components/header'
+import { Input } from '@/components/input'
 import { LinkButton } from '@/components/link-button'
+import { Product } from '@/components/product'
+
+import { type ProductCartProps, useCartStore } from '@/stores/cart-store'
 
 import { formatCurrency } from '@/utils/functions/format-currency'
 

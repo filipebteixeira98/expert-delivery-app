@@ -1,11 +1,10 @@
-import { Image, Text, View } from 'react-native'
-import { useLocalSearchParams, useNavigation, Redirect } from 'expo-router'
 import { Feather } from '@expo/vector-icons'
-
-import { useCartStore } from '@/stores/cart-store'
+import { Redirect, useLocalSearchParams, useNavigation } from 'expo-router'
+import { Image, Text, View } from 'react-native'
 
 import { Button } from '@/components/button'
 import { LinkButton } from '@/components/link-button'
+import { useCartStore } from '@/stores/cart-store'
 
 import { PRODUCTS } from '@/utils/data/products'
 import { formatCurrency } from '@/utils/functions/format-currency'
